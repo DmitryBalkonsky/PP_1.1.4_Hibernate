@@ -9,7 +9,6 @@ import java.util.List;
 import static jm.task.core.jdbc.util.Util.getConnection;
 
 public class UserDaoJDBCImpl implements UserDao {
-    private Connection connection = getConnection();
 
     public UserDaoJDBCImpl() {
 
@@ -19,9 +18,9 @@ public class UserDaoJDBCImpl implements UserDao {
     public void createUsersTable() {
         try (Connection connection = getConnection();
              PreparedStatement preparedStatement = connection.prepareStatement("CREATE TABLE IF NOT EXISTS Mydbtest " +
-                "(ID BIGINT NOT NULL AUTO_INCREMENT PRIMARY KEY, " +
-                "name varchar(40) NOT NULL, " +
-                "lastname varchar(40) NOT NULL, age TINYINT)")) {
+                     "(ID BIGINT NOT NULL AUTO_INCREMENT PRIMARY KEY, " +
+                     "name varchar(40) NOT NULL, " +
+                     "lastname varchar(40) NOT NULL, age TINYINT)")) {
             preparedStatement.executeUpdate();
 
 
