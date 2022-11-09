@@ -8,17 +8,17 @@ import java.sql.SQLException;
 import java.util.List;
 
 public interface UserService {
-    UserDao userDao = new UserDaoJDBCImpl();
 
-    void createUsersTable() throws SQLException;
 
-    void dropUsersTable() throws SQLException;
+    void createUsersTable();
 
-    void saveUser(String name, String lastName, byte age) throws SQLException;
+    void dropUsersTable();
 
-    void removeUserById(long id) throws SQLException;
+    void saveUser(String name, String lastName, byte age);
 
-    List<User> getAllUsers() throws SQLException;
+    void removeUserById(long id);
 
-    void cleanUsersTable() throws SQLException;
+    List<User> getAllUsers();
+
+    void cleanUsersTable();
 }
