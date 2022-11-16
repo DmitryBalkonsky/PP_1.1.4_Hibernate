@@ -11,7 +11,7 @@ import java.util.List;
 
 
 public class UserDaoHibernateImpl implements UserDao {
-    Transaction transaction = null;
+    private Transaction transaction = null;
     private static final String CREAT_USER_TABLE = "CREATE TABLE IF NOT EXISTS MYDB " +
             "(ID BIGINT NOT NULL AUTO_INCREMENT PRIMARY KEY, " +
             "name varchar(40) NOT NULL, " +
